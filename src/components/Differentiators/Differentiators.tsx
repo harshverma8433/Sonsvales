@@ -1,3 +1,4 @@
+import { it } from 'node:test';
 import React, { useState, useEffect, useRef } from 'react';
 
 interface DifferentiatorItem {
@@ -90,8 +91,8 @@ const Differentiators: React.FC = () => {
         {/* Heading Section */}
         <div className="text-center mb-6">
           <h2 className="text-6xl sm:text-7xl font-black bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent mb-4 tracking-tight">
-  Our Differentiators
-</h2>
+            Our Differentiators
+          </h2>
           <div className="h-2 w-24 mx-auto bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-full animate-pulse"></div>
           <p className="mt-4 max-w-3xl mx-auto text-xl text-slate-200 leading-relaxed">
             Discover what sets us apart in the digital transformation landscape
@@ -104,32 +105,28 @@ const Differentiators: React.FC = () => {
             <div
               key={index}
               ref={(el) => (itemRefs.current[index] = el)}
-              className={`group relative transform transition-all duration-1000 ${
-                visibleItems[index]
+              className={`group relative transform transition-all duration-1000 ${visibleItems[index]
                   ? 'translate-y-0 opacity-100'
                   : 'translate-y-20 opacity-0'
-              }`}
+                }`}
               style={{ transitionDelay: `${index * 200}ms` }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div
-                className={`relative bg-white/10 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 transition-transform duration-500 ${
-                  hoveredIndex === index ? 'scale-105 shadow-2xl' : ''
-                }`}
+                className={`relative bg-white/10 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 transition-transform duration-500 ${hoveredIndex === index ? 'scale-105 shadow-2xl' : ''
+                  }`}
               >
                 {/* Background gradient overlay - less prominent on hover */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.bgGradient} opacity-20 transition-opacity duration-300 ${
-                    hoveredIndex === index ? 'opacity-10' : 'opacity-20'
-                  } rounded-3xl`}
+                  className={`absolute inset-0 bg-gradient-to-br  ${item.bgGradient} opacity-20 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-10' : 'opacity-20'
+                    } rounded-3xl`}
                 ></div>
 
                 {/* Content container */}
                 <div
-                  className={`relative flex flex-col lg:flex-row items-center gap-12 p-8 lg:p-12 ${
-                    index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-                  }`}
+                  className={`relative flex flex-col lg:flex-row  items-center gap-12 p-8 lg:p-12 ${index % 2 !== 0 ? 'lg:flex-row-reverse lg:gap-12  lg:items-center lg:justify-evenly ' : ''
+                    }`}
                 >
                   {/* Text Content */}
                   <div className="lg:w-1/2 space-y-6 text-center lg:text-left z-10">
@@ -139,6 +136,7 @@ const Differentiators: React.FC = () => {
                         className={`text-4xl p-4 rounded-2xl shadow-lg transform transition-transform duration-300 bg-gradient-to-r ${item.color} text-white`}
                       >
                         {item.icon}
+                        {/* <img src={item.image} alt="ai.jpeg" /> */}
                       </div>
                       <h3
                         className={`text-4xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}
@@ -171,31 +169,24 @@ const Differentiators: React.FC = () => {
                   </div>
 
                   {/* Image with floating effects */}
-                  <div className="lg:w-1/2 flex justify-center lg:justify-end z-10">
+                  <div className={`lg:w-1/2  flex lg:justify-end  z-10 ${index % 2 !== 0 ? 'lg:flex lg:w-1/2 lg:justify-center   ' : ''
+                    } ` }>
                     <div className="relative group/image">
                       {/* Decorative rings - subdued on hover */}
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-r ${item.color} rounded-3xl opacity-10 transform rotate-6 transition-transform duration-500 ${
-                          hoveredIndex === index ? 'rotate-12 opacity-5' : ''
-                        }`}
-                      ></div>
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-r ${item.color} rounded-3xl opacity-5 transform -rotate-3 transition-transform duration-500 ${
-                          hoveredIndex === index ? '-rotate-6 opacity-2' : ''
-                        }`}
-                      ></div>
+                      
+                    
 
                       {/* Image container */}
-                      <div className="relative bg-white rounded-3xl p-8 shadow-xl transition-shadow duration-500 hover:shadow-2xl transform hover:-translate-y-2">
+                      <div className="relative  transition-shadow duration-500 transform hover:-translate-y-2">
                         <div
-                          className="w-64 h-64 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center text-6xl transform transition-transform duration-500 hover:scale-110"
+                          className="w- 96 h-96 r rounded-3xl overflow-hidden   rounded-2xl flex items-center justify-center text-6xl transform transition-transform duration-500 hover:scale-110"
                         >
-                          {item.icon}
+                          <img className='w-full h-full ' src={item.image} alt="" />
                         </div>
                         {/* Floating particles */}
-                        <div className="absolute top-4 right-4 w-3 h-3 bg-emerald-400 rounded-full animate-bounce"></div>
+                        {/* <div className="absolute top-4 right-4 w-3 h-3 bg-emerald-400 rounded-full animate-bounce"></div>
                         <div className="absolute bottom-6 left-6 w-2 h-2 bg-teal-400 rounded-full animate-bounce delay-300"></div>
-                        <div className="absolute top-1/2 right-8 w-1 h-1 bg-cyan-400 rounded-full animate-ping"></div>
+                        <div className="absolute top-1/2 right-8 w-1 h-1 bg-cyan-400 rounded-full animate-ping"></div> */}
                       </div>
                     </div>
                   </div>
@@ -204,9 +195,8 @@ const Differentiators: React.FC = () => {
                 {/* Progress bar */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-200 to-slate-300 rounded-b-full">
                   <div
-                    className={`h-full bg-gradient-to-r ${item.color} origin-left scale-x-0 transition-transform duration-1000 ease-in-out ${
-                      hoveredIndex === index ? 'scale-x-100' : ''
-                    }`}
+                    className={`h-full bg-gradient-to-r ${item.color} origin-left scale-x-0 transition-transform duration-1000 ease-in-out ${hoveredIndex === index ? 'scale-x-100' : ''
+                      }`}
                   ></div>
                 </div>
               </div>

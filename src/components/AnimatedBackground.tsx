@@ -5,8 +5,9 @@ const AnimatedBackground = () => {
   return (
     <div className=" inset-0 min-screen  pointer-events-none">
       {/* Main gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br min-h-[10px] from-slate-900 via-slate-800 to-slate-900" />
+      {/* <div className="absolute inset-0 bg-gradient-to-br min-h-[10px] from-slate-900 via-slate-800 to-slate-900" /> */}
       
+
       {/* Animated geometric shapes */}
       <div className="absolute inset-0">
         {/* Large floating squares */}

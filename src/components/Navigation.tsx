@@ -16,25 +16,25 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="relative z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800/50">
+    <nav className="relative z-50 bg-white backdrop-blur-md border-b border-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 transition-transform hover:scale-105">
             <img 
-              className="h-12 w-auto" 
+              className="h-20 w-auto" 
               src={logo} 
               alt="TechFlow Logo" 
             />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden  md:flex items-center text-black space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="relative text-slate-300 hover:text-white transition-all duration-300 font-medium group"
+                className="relative  hover:text- transition-all duration-300 font-medium group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>

@@ -4,7 +4,9 @@ import Navigation from "../components/Navigation";
 
 const Index = () => {
   return (
-    <div className="bg-slate-900 text-white min-h-screen">
+    <div style={{
+  background: 'linear-gradient(180deg, #003366 0%, #001933 100%)'
+}} className="text-white min-h-screen">
       <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />
