@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
               <h2 className="mb-6 text-sm font-semibold  uppercase text-white">Resources</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">Flowbite</a>
+                  <a href="#" className="hover:underline">Sonsvales</a>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                  <a href="#" className="hover:underline">Tailwind CSS</a>
                 </li>
               </ul>
             </div>
