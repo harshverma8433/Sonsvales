@@ -9,15 +9,18 @@ import {
   FaDribbble,
   FaDiscord
 } from 'react-icons/fa';
+import logo2 from "../../../public/images/logo2.png"
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-white bg-gray-900">
+    <footer className="text-white bg-gray-800">
       <div className="mx-auto text-white w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
+            
             <a href="/" className="flex items-center">
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Sonsvales</span>
+              <img src={logo2} alt="logo" className='w-20' />
+              {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Sonsvales</span> */}
             </a>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
